@@ -29,11 +29,10 @@ It's built with Node.js, Express, and MongoDB, and provides a clean interface fo
 2. **Navigate to the project directory:**
    ```bash
    cd ExpenseTracker
-
    
 3.**Install the dependencies:**
   ```bash
-  install
+   npm install
   ```
 
 4.**Set Up Environment Variables**
@@ -55,7 +54,7 @@ You're all set! 🎉 You can now use the Expense Tracker application to manage y
 This guide covers all the essential steps in a straightforward format. Make sure to update the MongoDB connection string in the `.env` file with your own credentials.
 
 
-📂 Project Structure
+## 📂 Project Structure
 index.js: Main entry point of the application.
 routes/: Contains route handlers for different endpoints.
 views/: Contains EJS templates for rendering HTML.
