@@ -30,22 +30,22 @@ It's built with Node.js, Express, and MongoDB, and provides a clean interface fo
    ```bash
    cd ExpenseTracker
    
-3.**Install the dependencies:**
+3. **Install the dependencies:**
   ```bash
    npm install
-  
+  ```
 
-4.**Set Up Environment Variables**
+4. **Set Up Environment Variables**
 Create a .env file in the root directory with the following content:
 
 MONGO_URI=mongodb+srv://jencysodvadiya:KKCOSxdWYnYWvYyK@cluster0.n9ylx.mongodb.net/
 
-5.**Start the application:**
+5. **Start the application:**
 Access the application:
 ```bash
   npm start
-
-6.**Open your web browser and visit:**
+```
+6. **Open your web browser and visit:**
 
 http://localhost:3003
 
