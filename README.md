@@ -55,8 +55,14 @@ This guide covers all the essential steps in a straightforward format. Make sure
 
 
 ## 📂 Project Structure
+
 index.js: Main entry point of the application.
+
 routes/: Contains route handlers for different endpoints.
+
 views/: Contains EJS templates for rendering HTML.
+
 models/: Contains Mongoose models for the database.
+
 public/: Contains static files like CSS and JavaScript.
+
