@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./custom.css">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1, h2 {
+            font-weight: 700;
+        }
+
+        .btn-custom {
+            background-color: #333;
+            color: #fff;
+            border-radius: 50px;
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #555;
+            color: #fff;
+        }
+
+        .table-custom thead {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .table-custom tbody tr {
+            transition: all 0.2s ease;
+        }
+
+        .table-custom tbody tr:hover {
+            background-color: #eaeaea;
+            cursor: pointer;
+        }
+
+        .btn-outline-warning, .btn-outline-danger {
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-warning:hover, .btn-outline-danger:hover {
+            color: #fff;
+        }
+
+        .btn-outline-warning:hover {
+            background-color: #ffcc00;
+            border-color: #ffcc00;
+        }
+
+        .btn-outline-danger:hover {
+            background-color: #ff4d4d;
+            border-color: #ff4d4d;
+        }
+
+        table {
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        td, th {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Expense Tracker</h1>
+    </div>
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center my-4">
+            <h2>Transaction History</h2>
+            <a href="/addForm" class="btn btn-custom"><i class="fas fa-plus"></i> Add Transaction</a>
+        </div>
+        <table class="table table-hover table-custom ">
+            <thead class="thead-light">
+                <tr>
+                    <th>Type</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Amount</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% eTransaction.forEach(transaction => { %>
+                <tr>
+                    <td><%= transaction.type %></td>
+                    <td><%= transaction.date.toDateString() %></td>
+                    <td><%= transaction.description %></td>
+                    <td><%= transaction.category %></td>
+                    <td><%= transaction.amount %></td>
+                    <td>
+                        <a href="/editTracker/<%= transaction._id %>" class="btn btn-sm btn-outline-warning"><i class="fas fa-edit"></i> Edit</a>
+                        <a href="/deleteTracker/<%= transaction._id %>" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash-alt"></i> Delete</a>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
